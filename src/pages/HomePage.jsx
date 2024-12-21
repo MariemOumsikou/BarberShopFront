@@ -40,7 +40,7 @@ const HomePage = () => {
         e.preventDefault();
         if (validateForm()) {
             try {
-                const response = await axios.post('http://localhost:3000/api/send-email', formData.slice(0,-1));
+                const response = await axios.post('https://barbershopback.onrender.com/api/send-email', formData.slice(0,-1));
                 if (response.status === 200) {
                     alert("Reservation successful!!");
                     setFormData({
@@ -62,7 +62,7 @@ const HomePage = () => {
         e.preventDefault();
         if (formData.message !== "" || formData.message !== " "){
             try{
-                const response = await axios.post('http://localhost:3000/api/send-comment', formData.fullName, formData.mailAddress, formData.message);
+                const response = await axios.post('https://barbershopback.onrender.com/api/send-comment', formData.fullName, formData.mailAddress, formData.message);
                 if(response.status == 200){
                     alert("Comment sent successfully!!");
                     setFormData({
